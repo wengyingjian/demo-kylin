@@ -29,6 +29,10 @@
         </dependency>
 
         <dependency>
+            <groupId>com.store59</groupId>
+            <artifactId>kylin-datasource</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
@@ -67,5 +71,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>
