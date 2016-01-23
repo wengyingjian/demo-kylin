@@ -1,14 +1,19 @@
 package com.wengyingjian.demo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by wengyingjian on 16/1/23.
  */
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
+@ComponentScan(basePackages = "com.wengyingjian")
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class Application {
 
     public static void main(String[] args) {

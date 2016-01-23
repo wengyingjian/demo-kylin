@@ -25,7 +25,7 @@
         <autoconfig.file>antx.properties</autoconfig.file>
         <autoconfig.path>${user.home}/antx-config/${groupName}/${projectName}</autoconfig.path>
         <groupName>example</groupName>
-        <projectName>${artifactId}</projectName>
+        <projectName>${project.artifactId}</projectName>
         <project.version>1.0-SNAPSHOT</project.version>
     </properties>
 

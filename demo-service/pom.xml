@@ -29,7 +29,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.store59</groupId>
+            <groupId>com.wengyingjian.kylin</groupId>
             <artifactId>kylin-datasource</artifactId>
         </dependency>
         <dependency>
