@@ -19,6 +19,7 @@
     <modules>
         <module>demo-service</module>
         <module>demo-common</module>
+        <module>demo-api</module>
     </modules>
 
     <properties>
