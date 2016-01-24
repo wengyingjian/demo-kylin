@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wengyingjian.demo.dao.mapper.UserMapper">
+    <resultMap id="userMap" type="com.wengyingjian.demo.model.User">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name
+    </sql>
+
+    <select id="selectUsers" resultMap="userMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateUser" parameterType="com.wengyingjian.demo.model.User">
+        UPDATE t_user SET user_name = #{userName} WHERE id = #{id}
+    </update>
+
+</mapper>
