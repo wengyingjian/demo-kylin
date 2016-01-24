@@ -28,9 +28,17 @@ public class UserApiServiceTest {
     }
 
     @Test
-    public void testGetRedis() {
+    public void testRedisGet() {
         User user = userApiService.getCachedUser(1);
         System.out.println(JsonUtil.getJsonFromObject(user));
+    }
+
+    @Test
+    public void testMqSend() {
+        User user = new User();
+        user.setId(10);
+        user.setUserName("andy");
+        userApiService.sendUserToQueue(user);
     }
 
 }
