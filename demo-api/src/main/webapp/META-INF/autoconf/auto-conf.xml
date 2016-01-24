@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+        <property name="userService.url" defaultValue="http://localhost:8080/demo-service/" description="userService地址" />
+    </group>
+    <script>
+        <generate template="demo-api.properties.vm" destfile="WEB-INF/classes/demo-api.properties"/>
+    </script>
+</config>
