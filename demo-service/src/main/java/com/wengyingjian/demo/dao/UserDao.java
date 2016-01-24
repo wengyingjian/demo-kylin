@@ -26,7 +26,9 @@ public class UserDao {
         return slaveUserMapper.selectUsers(userQuery);
     }
 
-    public int updateUser(User user) {
-        return masterUserMapper.updateUser(user);
+    public boolean updateUser(User user) {
+        int result = masterUserMapper.updateUser(user);
+        System.out.println("affected rows : " + result);
+        return result == 0 ? false : true;
     }
 }

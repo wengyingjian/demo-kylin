@@ -26,8 +26,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Result<Boolean> modifyUser(User user) {
-        int affectRows = userDao.updateUser(user);
-        boolean result = affectRows == 0 ? false : true;
-        return ResultUtil.genSuccessResult(result);
+        return ResultUtil.genSuccessResult(userDao.updateUser(user));
     }
 }
