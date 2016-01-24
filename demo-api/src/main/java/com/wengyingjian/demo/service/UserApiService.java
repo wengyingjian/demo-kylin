@@ -3,6 +3,7 @@ package com.wengyingjian.demo.service;
 import com.wengyingjian.demo.model.User;
 import com.wengyingjian.demo.model.query.UserQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -15,6 +16,9 @@ import java.util.List;
 public class UserApiService {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RedisTemplate<Object, Object> redisTemplate;
 
     public List<User> getUsers() {
         UserQuery userQuery = new UserQuery();
@@ -29,5 +33,14 @@ public class UserApiService {
             return null;
         }
         return userList.get(0);
+    }
+
+    public User getCachedUser(Integer userId) {
+        User user = (User) redisTemplate.opsForValue().get(String.valueOf(userId));
+        return user;
+    }
+
+    public void setCachedUser(User user) {
+        redisTemplate.opsForValue().set(String.valueOf(user.getId()), user);
     }
 }
