@@ -30,6 +30,11 @@
 
         <dependency>
             <groupId>com.wengyingjian.kylin</groupId>
+            <artifactId>kylin-rpc-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wengyingjian.kylin</groupId>
             <artifactId>kylin-datasource</artifactId>
         </dependency>
         <dependency>
