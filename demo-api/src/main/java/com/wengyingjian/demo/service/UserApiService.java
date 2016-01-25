@@ -53,4 +53,5 @@ public class UserApiService {
     public void sendUserToQueue(User user) {
         rabbitTemplate.convertAndSend(queueName, JsonUtil.getJsonFromObject(user));
     }
+
 }
