@@ -29,6 +29,10 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.wengyingjian.kylin</groupId>
             <artifactId>kylin-rpc-server</artifactId>
         </dependency>

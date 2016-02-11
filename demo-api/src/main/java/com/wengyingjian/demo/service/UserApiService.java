@@ -17,8 +17,6 @@ import java.util.List;
 @Service
 public class UserApiService {
 
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
     private String queueName = "user";
     @Autowired
     private UserService userService;
@@ -39,19 +37,6 @@ public class UserApiService {
             return null;
         }
         return userList.get(0);
-    }
-
-    public User getCachedUser(Integer userId) {
-        User user = (User) redisTemplate.opsForValue().get(String.valueOf(userId));
-        return user;
-    }
-
-    public void setCachedUser(User user) {
-        redisTemplate.opsForValue().set(String.valueOf(user.getId()), user);
-    }
-
-    public void sendUserToQueue(User user) {
-        rabbitTemplate.convertAndSend(queueName, JsonUtil.getJsonFromObject(user));
     }
 
 }
